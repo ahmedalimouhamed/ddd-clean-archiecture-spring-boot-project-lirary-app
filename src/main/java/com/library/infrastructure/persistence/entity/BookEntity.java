@@ -1,4 +1,4 @@
-package com.library.infrastructure.persistene.entity;
+package com.library.infrastructure.persistence.entity;
 
 import com.library.domain.model.BookStatus;
 import jakarta.persistence.*;
@@ -7,7 +7,6 @@ import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -42,6 +41,9 @@ public class BookEntity {
 
     @Column(nullable = false)
     private Integer availableCopies = 1;
+
+    @Column(nullable = false)
+    private boolean active = true;
 
     @CreationTimestamp
     private LocalDateTime createdAt;

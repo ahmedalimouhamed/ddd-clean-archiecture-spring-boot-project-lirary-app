@@ -22,6 +22,7 @@ import java.util.stream.Collectors;
 @Transactional
 public class BookManagerUseCaseImpl implements BookManagerUseCase {
     private final BookRepositoryPort bookRepository;
+
     private final BookMapper bookMapper;
 
     @Override
@@ -141,5 +142,12 @@ public class BookManagerUseCaseImpl implements BookManagerUseCase {
         return bookMapper.toResponse(updatedBook);
     }
 
-
+    public void borrowBook(Long id){
+        Book book = bookRepository.findById(id)
+                .orElseThrow(() ->
+                        new NotFoundException("Book not found with ID : "+ id)
+                );
+        book.borrow();
+        bookRepository.save(book);
+    }
 }

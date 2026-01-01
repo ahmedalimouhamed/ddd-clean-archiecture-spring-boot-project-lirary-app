@@ -2,7 +2,6 @@ package com.library.infrastructure.web.controller;
 
 import com.library.application.dto.BookResponse;
 import com.library.application.dto.CreateBookRequest;
-import com.library.application.dto.CreateMemberRequest;
 import com.library.application.usecases.BookManagerUseCase;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -67,7 +66,7 @@ public class BookController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleeBook(@PathVariable Long id){
+    public ResponseEntity<Void> deleteBook(@PathVariable Long id){
         bookManagerUseCase.deleteBook(id);
         return ResponseEntity.noContent().build();
     }

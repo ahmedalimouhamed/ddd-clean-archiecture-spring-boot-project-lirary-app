@@ -18,11 +18,13 @@ public class Book {
     private BookStatus status;
     private String publisher;
     private Integer totalCopies;
+    private boolean active;
     private Integer availableCopies;
 
     public Book(){
         this.status = BookStatus.AVAILABLE;
         this.totalCopies = 1;
+        this.setActive(true);
         this.availableCopies = 1;
     }
 
@@ -59,7 +61,7 @@ public class Book {
     }
 
     public boolean isAvailable(){
-        return status == BookStatus.AVAILABLE && availableCopies > 0;
+        return isActive() && status == BookStatus.AVAILABLE && availableCopies > 0;
     }
 
     public void borrow(){
@@ -91,5 +93,9 @@ public class Book {
         this.totalCopies += additionalCopies;
         this.availableCopies += additionalCopies;
         this.status = BookStatus.AVAILABLE;
+    }
+
+    public void deactivate(){
+        this.setActive(false);
     }
 }

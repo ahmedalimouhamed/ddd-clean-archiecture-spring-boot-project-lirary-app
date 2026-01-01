@@ -1,7 +1,7 @@
-package com.library.infrastructure.persistene.repository;
+package com.library.infrastructure.persistence.repository;
 
 import com.library.domain.model.BookStatus;
-import com.library.infrastructure.persistene.entity.BookEntity;
+import com.library.infrastructure.persistence.entity.BookEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,17 +1,16 @@
-package com.library.infrastructure.persistene.adapter;
+package com.library.infrastructure.persistence.adapter;
 
 import com.library.domain.model.Book;
 import com.library.domain.model.BookStatus;
 import com.library.domain.ports.input.BookRepositoryPort;
-import com.library.infrastructure.persistene.entity.BookEntity;
-import com.library.infrastructure.persistene.mapper.BookPersistenceMapper;
-import com.library.infrastructure.persistene.repository.BookJpaRepository;
+import com.library.infrastructure.persistence.entity.BookEntity;
+import com.library.infrastructure.persistence.mapper.BookPersistenceMapper;
+import com.library.infrastructure.persistence.repository.BookJpaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Repository
 @RequiredArgsConstructor

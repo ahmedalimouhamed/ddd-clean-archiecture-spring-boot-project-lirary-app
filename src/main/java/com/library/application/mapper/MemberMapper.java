@@ -5,7 +5,7 @@ import com.library.domain.model.Member;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper(componentModel = "sping")
+@Mapper(componentModel = "spring")
 public interface MemberMapper {
     @Mapping(target = "maxBorrowedBooks", constant = "5")
     MemberResponse toResponse(Member member);

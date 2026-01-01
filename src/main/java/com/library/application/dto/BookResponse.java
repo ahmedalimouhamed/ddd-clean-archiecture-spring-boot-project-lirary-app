@@ -13,8 +13,9 @@ public class BookResponse {
     private int publicationYear;
     private String publisher;
     private String status;
-    private String totalCopies;
+    private int totalCopies;
     private int availableCopies;
+    private boolean active;
     private LocalDate ceatedAt;
     private LocalDate updatedAt;
 }
